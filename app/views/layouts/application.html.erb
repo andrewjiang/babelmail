@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <title>Babel Mail</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	  <link href='http://fonts.googleapis.com/css?family=Allan:700' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Varela' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie&amp;subset=latin' rel='stylesheet' type='text/css'>
+	  <link rel="shortcut icon" href="assets/babel-logo.png" >
+
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %> 
+    <%= render 'layouts/shim' %>
+
+	</head>
+
+	<body>
+	  <%= render 'layouts/header' %>
+
+	  <% flash.each do |name, msg| %>
+			<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+		<% end %>
+
+	  <%= yield %>
+
+	  <%= render 'layouts/footer' %>
+	</body>
+</html>

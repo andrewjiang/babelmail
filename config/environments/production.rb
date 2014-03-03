@@ -81,4 +81,7 @@ Babelmail::Application.configure do
 
   #in production, :host should be host of application
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # getting active admin to play nice
+  config.assets.precompile += ['active_admin.css']
 end

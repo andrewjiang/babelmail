@@ -14,14 +14,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="babel-navbar-collapse">
       <ul class="nav navbar-nav" id="babel-main-links">
-        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#key-features">Key features</a></li>
         <li><a href="#languages-and-pricing">Languages & Pricing</a></li>
         <li>
           <%= link_to "Try it FREE", new_user_registration_path  %>
         </li>
       </ul>
       <ul class="nav navbar-nav pull-right">
-        <%= render 'layouts/navbar_signed_out' %>
+        <% if user_signed_in? %>
+          <%= render 'layouts/navbar_signed_in' %>
+        <% else %>
+          <%= render 'layouts/navbar_signed_out' %>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

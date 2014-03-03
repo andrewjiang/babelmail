@@ -1,10 +1,10 @@
 <li>
-  <%= link_to("Sign up", "#", id: "header-CTA") %>
+  <%= link_to("Sign up", new_user_registration_path, id: "header-CTA") %>
 </li>
 <li>
-  <a href="#" class="dropdown-toggle CTA" id="header-signin" data-toggle="dropdown">
-    Login <span class="caret"></span>
-  </a>
+	<%= link_to new_user_session_path, class: "dropdown-toggle CTA", id: "header-signin", :'data-toggle' => 'dropdown' do %>
+	Login <span class="caret"></span>
+	<% end %>
   <ul class="dropdown-menu signed-out pull-right" role="menu">
   </ul> 
 </li>

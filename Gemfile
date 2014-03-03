@@ -11,6 +11,7 @@ gem 'actionmailer', '4.0.2'
 gem 'delayed_job_active_record'
 gem "daemons"
 gem "mail_view", "~> 1.0.3"
+gem "simple_form"
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

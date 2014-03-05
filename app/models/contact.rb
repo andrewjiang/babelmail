@@ -5,4 +5,6 @@ class Contact < ActiveRecord::Base
 	validates :email, presence: true
 	validates :language, presence: true
 
+	belongs_to :user
+
 end

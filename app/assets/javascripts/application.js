@@ -16,13 +16,13 @@
 //= require_tree .
 
 $(document).ready(function(){
-	$('a').click(function(){
+	$('a.scroll-link').click(function(){
     $('html, body').animate({
         scrollTop: $( $.attr(this, 'href') ).offset().top
     }, 500);
     return false;
 	});
-	$('.alert').delay(500).animate({
+	$('.alert').delay(1000).animate({
 		height: "0px",
 		opacity: 0,
 		"padding-top": "0px",

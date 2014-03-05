@@ -1,5 +1,7 @@
 Babelmail::Application.routes.draw do
 
+  resources :babels
+
   resources :contacts
 
   devise_for :admin_users, ActiveAdmin::Devise.config

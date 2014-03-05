@@ -1,10 +1,11 @@
 class ContactsController < ApplicationController
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /contacts
   # GET /contacts.json
   def index
-    @contacts = Contact.all
+    @contacts = current_user.contacts
   end
 
   # GET /contacts/1
@@ -14,17 +15,18 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
-    @contact = Contact.new
+    @contact = current_user.contacts.new
   end
 
   # GET /contacts/1/edit
   def edit
+    @contact = current_user.contacts.find(params[:id])
   end
 
   # POST /contacts
   # POST /contacts.json
   def create
-    @contact = Contact.new(contact_params)
+    @contact = current_user.contacts.new(contact_params)
 
     respond_to do |format|
       if @contact.save
@@ -40,6 +42,8 @@ class ContactsController < ApplicationController
   # PATCH/PUT /contacts/1
   # PATCH/PUT /contacts/1.json
   def update
+    @contact = current_user.contacts.find(params[:id])
+
     respond_to do |format|
       if @contact.update(contact_params)
         format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
@@ -54,6 +58,8 @@ class ContactsController < ApplicationController
   # DELETE /contacts/1
   # DELETE /contacts/1.json
   def destroy
+    @contact = current_user.contacts.find(params[:id])
+
     @contact.destroy
     respond_to do |format|
       format.html { redirect_to contacts_url }

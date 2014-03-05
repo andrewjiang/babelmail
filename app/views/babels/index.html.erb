@@ -1,0 +1,27 @@
+<h1>Listing babels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Message</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @babels.each do |babel| %>
+      <tr>
+        <td><%= babel.message %></td>
+        <td><%= link_to 'Show', babel %></td>
+        <td><%= link_to 'Edit', edit_babel_path(babel) %></td>
+        <td><%= link_to 'Destroy', babel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Babel', new_babel_path %>

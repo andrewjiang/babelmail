@@ -87,6 +87,7 @@
 		color: #333;
 		font-size: 14px;
 	}
+
 	.babel-header{
 		height: 70px;
 	}
@@ -97,6 +98,9 @@
 		font-weight: 700;
 		font-family: 'Montserrat Alternates', 'Allan', 'Arial';
 		letter-spacing: -2px;
+	}
+	.navbar-brand.babel-brand:hover{
+		color: rgba(44, 62, 80, 1);
 	}
 	#babel-navbar-collapse{
 		padding-top: 15px;
@@ -234,6 +238,51 @@
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
+	.CTA-button {
+			-moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+			-webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+			box-shadow:inset 0px 1px 0px 0px #97c4fe;
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0) );
+			background:-moz-linear-gradient( center top, #3d94f6 5%, #1e62d0 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0');
+			background-color:#3d94f6;
+			-webkit-border-top-left-radius:2px;
+			-moz-border-radius-topleft:2px;
+			border-top-left-radius:2px;
+			-webkit-border-top-right-radius:2px;
+			-moz-border-radius-topright:2px;
+			border-top-right-radius:2px;
+			-webkit-border-bottom-right-radius:2px;
+			-moz-border-radius-bottomright:2px;
+			border-bottom-right-radius:2px;
+			-webkit-border-bottom-left-radius:2px;
+			-moz-border-radius-bottomleft:2px;
+			border-bottom-left-radius:2px;
+			text-indent:0;
+			border:1px solid #337fed;
+			display:inline-block;
+			color:#ffffff;
+			font-family:Arial;
+			font-size:24px;
+			font-weight:bold;
+			font-style:normal;
+			height:65px;
+			line-height:65px;
+			width:200px;
+			text-decoration:none;
+			text-align:center;
+			text-shadow:1px 1px 0px #1570cd;
+		}
+		.CTA-button:hover {
+			background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6) );
+			background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
+			background-color:#1e62d0;
+		}
+		.CTA-button:active {
+			position:relative;
+			top:1px;
+		}
 	label.error{
 	    color:#DA6565;
 	}

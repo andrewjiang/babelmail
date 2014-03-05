@@ -88,20 +88,21 @@
 		font-size: 14px;
 	}
 	.babel-header{
-		height: 80px;
+		height: 70px;
 	}
 	.navbar-brand.babel-brand{
-		font-size: 40px;
-		padding-top: 10px;
-		color: #555;
-		font-family: 'Open Sans';
-		font-weight: 100;
+		font-size: 36px;
+		padding-top: 6px;
+		color: rgba(44, 62, 80, 0.9);
+		font-weight: 700;
+		font-family: 'Montserrat Alternates', 'Allan', 'Arial';
+		letter-spacing: -2px;
 	}
 	#babel-navbar-collapse{
 		padding-top: 15px;
 	}
 	#babel-main-links{
-		padding-left: 30px;
+		padding-left: 20px;
 	}
 	#babel-navbar-collapse .navbar-nav li{
 		font-size: 16px;
@@ -110,8 +111,8 @@
 		margin-top: 4px;
 	}
 	#babel-navbar-collapse .navbar-nav li a{
-		padding-top: 6px;
-		padding-bottom: 6px;
+		padding-top: 4px;
+		padding-bottom: 4px;
 	}
 	#babel-navbar-collapse .navbar-nav li:last-child{
 		border-right: 0px solid #ddd;
@@ -175,7 +176,7 @@
 	}
 	.footer {
   	background-color: #272727;
-		min-height: 80px;
+		min-height: 250px;
 		position: relative;
 		width:100%;
 		color: #FAFBFC;
@@ -227,8 +228,8 @@
 	#logo {
 		font-size: 50px;
 		color: #16a085;
-		font-weight: bold;
-		font-family: 'Allan', 'Arial';
+		font-weight: 700;
+		font-family: 'Montserrat Alternates', 'Allan', 'Arial';
 		background-image: -webkit-gradient(linear, left top, left bottom, from(#16a085), to(rgba(22,160,133,0.7)));
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -713,6 +714,10 @@
 		min-height: 500px;
 		padding: 20px 0px 40px 0px;
 	}
+	.normal-page{
+		min-height: 500px;
+		padding: 20px 0px 40px 0px;
+	}
 	.form-page h2, .form-page h5{
 		text-align: center;
 		color: #555;
@@ -741,6 +746,36 @@
 	}
 /* End Form Page CSS */
 
+/* Contacts CSS */
+
+	.pop-up{
+
+		background-color: #fff;
+		margin-top: 20px;
+		padding: 40px;
+		border-radius: 10px;
+		border: 1px #eee solid;
+		-webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+		box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+		-webkit-font-smoothing: subpixel-antialiased;
+
+
+	}
+	.normal-page-title{
+		font-size: 32px;
+	}
+
+	.normal-page table{
+		margin-top: 30px;
+	}
+	.normal-page thead{
+		background-color: rgba(44, 62, 80,1.0);
+		font-size: 16px;
+		font-weight: 900;
+		color: #fff;
+		border-radius: 4px;
+	}
+/* End Contacts CSS */
 
 /* Override Bootstrap style to address bug with mobile dropdowns */
 .dropdown-backdrop {

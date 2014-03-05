@@ -22,4 +22,11 @@ $(document).ready(function(){
     }, 500);
     return false;
 	});
+	$('.alert').delay(500).animate({
+		height: "0px",
+		opacity: 0,
+		"padding-top": "0px",
+		"padding-bottom": "0px",
+		border: "0px",
+	}).fadeOut();
 });

@@ -1,10 +1,18 @@
 Babelmail::Application.routes.draw do
 
+  resources :contacts
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
 
-  root 'home#index'
+  authenticated :user do
+    root to: "contacts#index", as: :authenticated_root
+  end
+
+  unauthenticated do
+    root to: "home#index"
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -95,6 +95,8 @@ GEM
     erubis (2.7.0)
     execjs (2.0.2)
     ffi (1.9.3)
+    font-awesome-sass (4.0.3.1)
+      sass (~> 3.2)
     formtastic (2.3.0.rc2)
       actionpack (>= 3.0)
     has_scope (0.6.0.rc)
@@ -241,6 +243,7 @@ DEPENDENCIES
   daemons
   delayed_job_active_record
   devise (~> 3.2)
+  font-awesome-sass
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
   jquery-turbolinks

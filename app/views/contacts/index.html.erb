@@ -1,0 +1,45 @@
+<div class="container normal-page">
+  <div class="pop-up">
+
+  <div class="row">
+    <div class="col-md-12"><span class="normal-page-title">Contacts</span></div>
+  </div>
+
+  <div class="row"><div class="col-md-12">
+    <table class="table table-responsive">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Babel Mail</th>
+          <th>Language</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @contacts.each do |contact| %>
+          <tr>
+            <td><%= contact.firstname %> <%= contact.lastname %></td>
+            <td><%= contact.email %></td>
+            <td><%= link_to "contact@babel-mail.com", "mailto:contact@babel-mail.com"  %></td>
+            <td><%= contact.language %></td>
+            <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+            <td><%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' }, :class => "flatred" %></td>
+          </tr>
+        <% end %>
+        <tr>
+            <td><%= link_to '+ New Contact', new_contact_path %></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+
+  </div></div>
+</div>

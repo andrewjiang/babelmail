@@ -1,10 +1,18 @@
-<li>
-  <%= link_to("Sign up", new_user_registration_path, id: "header-CTA") %>
-</li>
-<li>
-	<%= link_to new_user_session_path, class: "dropdown-toggle CTA", id: "header-signin", :'data-toggle' => 'dropdown' do %>
-	Login <span class="caret"></span>
-	<% end %>
-  <ul class="dropdown-menu signed-out pull-right" role="menu">
-  </ul> 
-</li>
+<div class="collapse navbar-collapse" id="babel-navbar-collapse">
+  <ul class="nav navbar-nav" id="babel-main-links">
+    <li><a href="/#key-features">Key features</a></li>
+    <li><a href="/#languages-and-pricing">Languages & Pricing</a></li>
+  </ul>
+  <ul class="nav navbar-nav pull-right">
+		<li>
+		  <%= link_to("Sign up", new_user_registration_path, id: "header-CTA") %>
+		</li>
+		<li>
+			<%= link_to new_user_session_path, class: "dropdown-toggle CTA", id: "header-signin", :'data-toggle' => 'dropdown' do %>
+			Login
+			<% end %>
+		  <ul class="dropdown-menu signed-out pull-right" role="menu">
+		  </ul> 
+		</li>
+	</ul>
+</div><!-- /.navbar-collapse -->

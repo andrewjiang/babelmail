@@ -30,8 +30,8 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @contact }
+        @contacts = current_user.contacts
+        format.html { redirect_to action: "index" }
       else
         format.html { render action: 'new' }
         format.json { render json: @contact.errors, status: :unprocessable_entity }

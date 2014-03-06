@@ -1,17 +1,25 @@
-<div class="container normal-page">
+<div class="normal-page">
+<div class="container">
   <div class="pop-up">
+
+<div class="well">
+  <div class="row">
+    
+      <div class="col-md-12"><span>Your Babel Address is <span class="flatgreen" data-intro="This is your <span class='flatgreen'>Babel Address</span>, created just for you. <br><br>When you send an email through Babel Mail, your contacts will receive translated emails from and reply to this address">ajiang@babel-mail.com</span></span></div>
+    </div>
+  </div>
 
   <div class="row">
     <div class="col-md-12"><span class="normal-page-title">Contacts</span></div>
   </div>
 
   <div class="row"><div class="col-md-12">
-    <table class="table table-responsive">
+    <table class="table table-responsive" data-step="2" data-intro="These are your <span class='flatgreen'>Babel Contacts</span>, people that you want to communicate with using translated emails">
       <thead>
         <tr>
           <th>Name</th>
           <th>Email</th>
-          <th>Babel Mail</th>
+          <th>Send emails to</th>
           <th>Language</th>
           <th></th>
           <th></th>
@@ -29,8 +37,16 @@
             <td><%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' }, :class => "flatred" %></td>
           </tr>
         <% end %>
+          <tr>
+            <td>Andrew Babel</td>
+            <td>andrew.h.jiang@gmail.com</td>
+            <td data-step="3" data-intro="To write an email to Andrew, send your email to his unique <span class='flatgreen'>Babel Address</span> created just for you"><%= link_to "andrew.ajiang@babel-mail.com", "mailto:andrew.ajiang@babel-mail.com"  %></td>
+            <td data-step="4" data-intro="Andrew will receive your email translated in <span class='flatorange'>Chinese</span>, and his replies will get back to you in <span class='flatorange'>English</span>">Chinese</td>
+            <td><%= link_to 'Edit', "#" %></td>
+            <td><%= link_to 'Delete', "#", :class => "flatred" %></td>
+          </tr>
         <tr>
-            <td><%= link_to '+ New Contact', new_contact_path %></td>
+            <td data-step="5" data-intro="It's that simple! <br><br>Get started by adding a new contact, and prepare to connect with the world"><%= link_to '+ New Contact', new_contact_path %></td>
             <td></td>
             <td></td>
             <td></td>
@@ -41,5 +57,25 @@
     </table>
   </div>
 
+<!-- Modal -->
+<div class="modal fade" id="welcome-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title" id="welcome-modal-label">Welcome to Babel Mail!</h3>
+      </div>
+      <div class="modal-body introjs-tooltiptext">
+        To get you started, follow along the tutorial and learn how to send and receive translated emails directly from your email client (e.g. Gmail, Outlook, Yahoo)
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="start-tutorial">Start Tutorial!</button>
+        <button type="button" class="btn" data-dismiss="modal">No thanks</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   </div></div>
+</div>
 </div>

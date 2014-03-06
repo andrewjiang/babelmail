@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
@@ -22,11 +23,21 @@ $(document).ready(function(){
     }, 500);
     return false;
 	});
-	$('.alert').delay(1000).animate({
-		height: "0px",
-		opacity: 0,
-		"padding-top": "0px",
-		"padding-bottom": "0px",
-		border: "0px",
-	}).fadeOut();
+//	$('.alert').delay(1000).animate({
+//		height: "0px",
+//		opacity: 0,
+//		"padding-top": "0px",
+//		"padding-bottom": "0px",
+//		border: "0px",
+//	}).fadeOut();
+  
+  $(".alert").alert();
+
+	$('#welcome-modal').modal();
+
+	$('#start-tutorial').click(function(){
+    introJs().start();
+    $('#welcome-modal').modal('hide');
+	});  
+
 });

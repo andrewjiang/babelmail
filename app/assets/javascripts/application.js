@@ -33,7 +33,13 @@ $(document).ready(function(){
   
   $(".alert").alert();
 
-	$('#welcome-modal').modal();
+  if($('#sign-in-count').html() == 1){
+    $('#welcome-modal').modal();
+  };
+
+  $('.show-tutorial').click(function(){
+    $('#welcome-modal').modal();
+  })
 
 	$('#start-tutorial').click(function(){
     introJs().start();

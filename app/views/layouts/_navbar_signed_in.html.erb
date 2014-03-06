@@ -2,7 +2,7 @@
       <ul class="nav navbar-nav pull-right">
         <li>
 				  <%= link_to edit_user_registration_path, :id => "header-CTA" do %> 
-				  Welcome <%= current_user.email %>
+				  Hi <%= current_user.username %>!
 				  <% end %>
 				</li>
 				<li>
@@ -13,5 +13,9 @@
 				  </ul> 
 				</li>
       </ul>
+      <div class="hidden" id="sign-in-count">
+      	<%= current_user.sign_in_count %>
+      	<%= current_user.contacts.count %>
+      </div>
     </div><!-- /.navbar-collapse -->
 

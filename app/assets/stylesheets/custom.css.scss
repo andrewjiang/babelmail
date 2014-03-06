@@ -286,6 +286,10 @@
 	label.error{
 	    color:#DA6565;
 	}
+	#error_explanation{
+			color:#DA6565;
+			margin-top: -15px;
+	}
 	@media (max-width: 767px){
 		#arrow-up{
 			top: 32px;

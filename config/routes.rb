@@ -12,7 +12,7 @@ Babelmail::Application.routes.draw do
     root to: "contacts#index", as: :authenticated_root
   end
 
-  unauthenticated do
+  unauthenticated :user do
     root to: "home#index"
   end
 

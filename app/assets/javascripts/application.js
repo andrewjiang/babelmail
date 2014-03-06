@@ -37,9 +37,13 @@ $(document).ready(function(){
     $('#welcome-modal').modal();
   };
 
+  $("#welcome-modal").on('shown', function() {
+      $('#start-tutorial').focus();
+  });
+
   $('.show-tutorial').click(function(){
     $('#welcome-modal').modal();
-  })
+  });
 
 	$('#start-tutorial').click(function(){
     introJs().start();

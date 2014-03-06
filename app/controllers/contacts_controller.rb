@@ -32,7 +32,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.save
         @contacts = current_user.contacts
-        format.html { redirect_to action: "index" }
+        format.html { redirect_to contacts_url, notice: 'Contact was successfully added.' }
       else
         format.html { render action: 'new' }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
@@ -47,7 +47,8 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.update(contact_params)
-        format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
+        @contacts = current_user.contacts
+        format.html { redirect_to contacts_url, notice: 'Contact was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -63,7 +64,7 @@ class ContactsController < ApplicationController
 
     @contact.destroy
     respond_to do |format|
-      format.html { redirect_to contacts_url }
+      format.html { redirect_to contacts_url, notice: 'Contact was successfully deleted.' }
       format.json { head :no_content }
     end
   end

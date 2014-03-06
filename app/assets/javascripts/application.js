@@ -33,7 +33,7 @@ $(document).ready(function(){
   
   $(".alert").alert();
 
-  if($('#sign-in-count').html() == 1){
+  if($('#sign-in-count').html() == 1 && $('#contacts-count').html() == 0 ){
     $('#welcome-modal').modal();
   };
 

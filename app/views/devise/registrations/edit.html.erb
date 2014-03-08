@@ -22,9 +22,6 @@
       <div><%= f.label :new_password %><br />
       <%= f.password_field :password, :autocomplete=> "off", :required => false, :hint => "leave it blank if you don't want to change it", :class => "form-control" %></div>
 
-      <div><%= f.label :confirm_new_password %><br />
-      <%= f.password_field :password_confirmation, :required => false, :class => "form-control" %></div>
-
       <div><%= f.label :current_password %><br />
       <%= f.password_field :current_password, :hint => "we need your current password to confirm your changes", :required => true, :class => "form-control" %></div>
 

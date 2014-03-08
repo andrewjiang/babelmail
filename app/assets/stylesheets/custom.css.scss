@@ -306,6 +306,10 @@
 		#nav-dropdown .btn{
 			border-radius: 0px;
 		}
+	  #landing-hero .btn-lg span{
+	  	padding-left: 0px;
+	  	padding-right: 0px;
+	  }
 	}
 /* End Base CSS */
 
@@ -765,6 +769,14 @@
 		.navbar-collapse.in {
 			overflow-y: visible;
 		}
+
+	}
+	@media (max-width: 767px){
+	  .flag-small{
+	  	margin-left: auto;
+	  	margin-right: auto;
+	  	display: block;
+	  }
 	}
 /* End Home CSS */
 

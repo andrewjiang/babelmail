@@ -1,12 +1,20 @@
 Babelmail::Application.routes.draw do
 
+  get "registrations/account_type"
   resources :babels
 
   resources :contacts
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
   devise_for :users
+
+  resource :users do
+    member do
+      get 'account'
+    end 
+  end
 
   authenticated :user do
     root to: "contacts#index", as: :authenticated_root

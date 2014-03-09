@@ -1,9 +1,9 @@
 <div class="collapse navbar-collapse" id="babel-navbar-collapse">
       <ul class="nav navbar-nav pull-right">
-        <li>
-				  <%= link_to edit_user_registration_path, :id => "header-CTA" do %> 
-				  Hi <%= current_user.username %>!
-				  <% end %>
+        <li id="header-msg">
+        	Hi
+				  <%= link_to edit_user_registration_path, :id => "header-name" do %> 
+				  <%= current_user.username %><% end %>, you have <%= content_tag(:span, :class => "flatgreen") do %> <%= current_user.credits %> credit(s) <% end %> left
 				</li>
 				<li>
 				  <%= link_to destroy_user_session_path, :method => :delete, class: "dropdown-toggle CTA", id: "header-signout" do %>

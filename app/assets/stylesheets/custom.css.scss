@@ -144,8 +144,20 @@
 		font-size: 16px;
 		color: rgba(29, 147, 221, .9);
 	}
+	#header-name{
+		font-weight: 900;
+		font-size: 16px;
+		color: rgba(29, 147, 221, .9);
+		padding-left: 0px;
+		padding-right: 0px;
+		display: inline;
+	}
 	#header-CTA:hover{
 		color: rgba(29, 147, 221, 1);
+	}
+	#header-msg{
+		padding: 4px 24px 4px 4px !important;
+		line-height: 20px;
 	}
 	#dropdown-schedule{
 		color: rgba(29, 147, 221, .9);
@@ -777,6 +789,9 @@
 	  	margin-right: auto;
 	  	display: block;
 	  }
+	  a.button-default span{
+	  	font-size: 22px;
+	  }
 	}
 /* End Home CSS */
 
@@ -866,3 +881,196 @@
 .dropdown-backdrop {
     position: static;
 }
+
+/* Pricing Page CSS */
+#plans,#plans ul,#plans ul li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#pricePlans:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+#pricePlans {
+	zoom: 1;
+}
+
+#pricePlans {
+	max-width: 69em;
+	margin: 0 auto;
+}
+
+#pricePlans #plans .plan {
+	background: #fff;
+	float: left;
+	width: 100%;
+	text-align: center;
+	border-radius: 5px;
+	margin: 0 0 20px 0;
+
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+	box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+}
+
+.planContainer .title h2 {
+	font-size: 2.125em;
+	font-weight: 300;
+	color: #2c3e50;
+	margin: 0;
+	padding: .6em 0;
+}
+
+.planContainer .title h2.bestPlanTitle {
+	background: #2c3e50;
+	color: #fff;
+	border-radius: 5px 5px 0 0;
+}
+
+
+.planContainer .price p {
+	background: #2c3e50;
+	color: #fff;
+	font-size: 1.2em;
+	font-weight: 700;
+	height: 2.6em;
+	line-height: 2.6em;
+	margin: 0 0 1em;
+}
+
+.planContainer .price p.bestPlanPrice {
+	background: #16a085;
+}
+
+.planContainer .price p span {
+	color: #8394ae;
+}
+
+.planContainer .options {
+	margin-top: 10em;
+}
+
+.planContainer .options li {
+	font-weight: 700;
+	color: #2c3e50;
+	line-height: 2.5;
+}
+
+.planContainer .options li span {
+	font-weight: 400;
+	color: #979797;
+}
+
+.planContainer .button a {
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #3e4f6a;
+	font-weight: 700;
+	letter-spacing: 3px;
+	line-height: 2.8em;
+	border: 2px solid #3e4f6a;
+	display: inline-block;
+	width: 80%;
+	border-radius: 4px;
+	margin: 1.5em 0 2em;
+}
+
+.planContainer .button a.bestPlanButton {
+	color: #fff;
+	background: #16a085;
+	border: 2px solid #16a085;
+}
+
+#credits {
+	text-align: center;
+	font-size: .8em;
+	font-style: italic;
+	color: #777;
+}
+
+#credits a {
+	color: #333;
+}
+
+#credits a:hover {
+	text-decoration: none;
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+	#pricePlans #plans .plan {
+		width: 49%;
+		margin: 0 2% 20px 0;
+	}
+
+	#pricePlans #plans > li:nth-child(2n) {
+		margin-right: 0;
+	}
+
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+	#pricePlans #plans .plan {
+		width: 49%;
+		margin: 0 2% 20px 0;
+	}
+
+	#pricePlans #plans > li:nth-child(2n) {
+		margin-right: 0;
+	}
+
+}
+
+@media screen and (min-width: 1025px) {
+
+	#pricePlans {
+		margin: 2em auto;
+	}
+
+	#pricePlans #plans .plan {
+		width: 32%;
+		margin: 0 1.33% 20px 0;
+
+		-webkit-transition: all .25s;
+		   -moz-transition: all .25s;
+		    -ms-transition: all .25s;
+		     -o-transition: all .25s;
+		        transition: all .25s;
+	}
+
+	#pricePlans #plans > li:last-child {
+		margin-right: 0;
+	}
+
+	#pricePlans #plans .plan:hover {
+		-webkit-transform: scale(1.04);
+		   -moz-transform: scale(1.04);
+		    -ms-transform: scale(1.04);
+		     -o-transform: scale(1.04);
+		        transform: scale(1.04);
+	}
+
+	.planContainer .button a {
+		-webkit-transition: all .25s;
+		   -moz-transition: all .25s;
+		    -ms-transition: all .25s;
+		     -o-transition: all .25s;
+		        transition: all .25s;
+	}
+
+	.planContainer .button a:hover {
+		background: #3e4f6a;
+		color: #fff;
+	}
+
+	.planContainer .button a.bestPlanButton:hover {
+		background: #ff9c70;
+		border: 2px solid #ff9c70;
+	}
+
+}
+/* End Pricing Page CSS */

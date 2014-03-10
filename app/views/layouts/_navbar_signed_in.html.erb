@@ -3,7 +3,7 @@
         <li id="header-msg">
         	Hi
 				  <%= link_to edit_user_registration_path, :id => "header-name" do %> 
-				  <%= current_user.username %><% end %>, you have <%= content_tag(:span, :class => "flatgreen") do %> <%= current_user.credits %> free credit(s) <% end %> left
+				  <%= current_user.username %><% end %>, you have <%= content_tag(:span, :class => "flatgreen") do %> <%= current_user.credits %> free email(s) <% end %> left
 				</li>
 				<li>
 				  <%= link_to destroy_user_session_path, :method => :delete, class: "dropdown-toggle CTA", id: "header-signout" do %>

@@ -1,4 +1,86 @@
-<div class="form-page">
+<script>
+	$(document).ready(function(){
+	  $('.pricing-button').click(function(){
+	    $('#pricing-form').toggleClass("hidden");
+	    $('#new-account-form').toggleClass("hidden");
+	    $('#account-type-field').val(event.target.id);
+	  });
+	});
+</script>
+<div class="form-page" id="pricing-form">
+
+  <div class="container">
+    <div class="row"><div class="col-md-10 col-md-offset-1">
+
+    <h2>Choose your account type</h2>
+    <h5>No credit card needed until your 5 FREE trial translations are used</h5>
+
+      <div class="row" id="pricing-table">
+
+        <div id="pricePlans">
+          <ul id="plans">
+            <li class="plan">
+              <ul class="planContainer">
+                <li class="title"><h2>Trial</h2></li>
+                <li class="price"><p>FREE</p></li>
+                <li>
+                  <ul class="options">
+                    <li>5 <span>emails free</span></li>
+                    <li>2 hour <span>turnaround</span></li>
+                    <li>Chinese <span>only</span></li>
+                    <li>Unlimited <span>contacts</span></li>
+                    <li>Business hours <span>support</span></li>
+                  </ul>
+                </li>
+                <li class="button pricing-button" id="Trial">Select</li>
+              </ul>
+            </li>
+
+            <li class="plan">
+              <ul class="planContainer">
+                <li class="title"><h2 class="bestPlanTitle">Standard</h2></li>
+                <li class="price"><p class="bestPlanPrice">$20/month</p></li>
+                <li>
+                  <ul class="options">
+                    <li>10 <span>emails per month</span></li>
+                    <li>1 hour <span>turnaround</span></li>
+                    <li>All languages</li>
+                    <li>Unlimited <span>contacts</span></li>
+                    <li>24 hour <span>support</span></li>
+                  </ul>
+                </li>
+                <li class="button pricing-button bestPlanButton" id="Standard">Select</li>
+              </ul>
+            </li>
+
+            <li class="plan">
+              <ul class="planContainer">
+                <li class="title"><h2>Power</h2></li>
+                <li class="price"><p>$50/<span>month</span></p></li>
+                <li>
+                  <ul class="options">
+                    <li>25 + 5 EXTRA <span>emails per month</span></li>
+                    <li>30 minute <span>turnaround</span></li>
+                    <li>All languages</li>
+                    <li>Unlimited <span>contacts</span></li>
+                    <li>24 hour <span>support</span></li>
+                  </ul>
+                </li>
+                <li class="button pricing-button" id="Power">Select</li>
+              </ul>
+            </li>
+
+          </ul> <!-- End ul#plans -->
+        </div>
+
+      </div>
+
+    
+    </div></div>
+  </div>
+</div>
+
+<div class="form-page hidden" id="new-account-form">
 <div class="container">
 	<div class="row"><div class="col-md-6 col-md-offset-3">
 
@@ -19,7 +101,10 @@
 		  <div><%= f.label :password %><br />
 		  <%= f.password_field :password, :class => "form-control" %></div>
 
+		  <div><%= f.text_field :account_type, :class => "form-control", :id => "account-type-field" %></div>
+
 		  <div><%= f.submit "Let's get started!", :class=>"btn btn-info btn-block", :id=>"account-submit-button" %></div>
+
 		<% end %>
 
 		<%= render "devise/shared/links" %>

@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
    										 presence: true, 
    										 uniqueness: true
 
+  validates :account_type, presence: true
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

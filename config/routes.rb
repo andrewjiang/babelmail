@@ -1,6 +1,4 @@
 Babelmail::Application.routes.draw do
-
-  get "registrations/account_type"
   resources :babels
 
   resources :contacts
@@ -10,12 +8,6 @@ Babelmail::Application.routes.draw do
 
   devise_for :users
 
-  resource :users do
-    member do
-      get 'account'
-    end 
-  end
-
   authenticated :user do
     root to: "contacts#index", as: :authenticated_root
   end
@@ -23,6 +15,8 @@ Babelmail::Application.routes.draw do
   unauthenticated :user do
     root to: "home#index"
   end
+
+  get 'users/select_plan' => 'pricing#select_plan'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

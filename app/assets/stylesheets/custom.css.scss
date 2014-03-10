@@ -838,7 +838,7 @@
 	.form-box .btn{
 		margin-top: 40px;
 	}
-	#account-submit-button{
+	#basic-info-button{
 		font-size: 16px;
 	}
 	.help-inline{
@@ -887,6 +887,10 @@
 	margin: 0;
 	padding: 0;
 	list-style: none;
+}
+
+#plans ul{
+	padding-bottom: 20px;
 }
 
 #pricePlans:after {
@@ -964,7 +968,7 @@
 	color: #979797;
 }
 
-.planContainer .button a {
+.planContainer .button {
 	text-transform: uppercase;
 	text-decoration: none;
 	color: #3e4f6a;
@@ -976,12 +980,16 @@
 	width: 80%;
 	border-radius: 4px;
 	margin: 1.5em 0 2em;
+	background-color: #fff;
 }
 
-.planContainer .button a.bestPlanButton {
+.planContainer .button.bestPlanButton{
 	color: #fff;
 	background: #16a085;
 	border: 2px solid #16a085;
+}
+.planContainer .button:hover{
+	cursor: pointer;
 }
 
 #credits {
@@ -1054,7 +1062,7 @@
 		        transform: scale(1.04);
 	}
 
-	.planContainer .button a {
+	.planContainer .button{
 		-webkit-transition: all .25s;
 		   -moz-transition: all .25s;
 		    -ms-transition: all .25s;
@@ -1062,12 +1070,12 @@
 		        transition: all .25s;
 	}
 
-	.planContainer .button a:hover {
+	.planContainer .button:hover {
 		background: #3e4f6a;
 		color: #fff;
 	}
 
-	.planContainer .button a.bestPlanButton:hover {
+	.planContainer .button.bestPlanButton:hover {
 		background: #ff9c70;
 		border: 2px solid #ff9c70;
 	}

@@ -49,5 +49,4 @@ $(document).ready(function(){
     introJs().start();
     $('#welcome-modal').modal('hide');
 	});  
-
 });

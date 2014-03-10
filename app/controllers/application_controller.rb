@@ -8,9 +8,19 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) << :name << :surname << :username
-    devise_parameter_sanitizer.for(:account_update) << :name << :surname << :username
+    devise_parameter_sanitizer.for(:sign_up) << :name << :surname << :username << :account_type
+    devise_parameter_sanitizer.for(:account_update) << :name << :surname << :username << :account_type
   end
+
+	def confirm_logged_in
+	    unless session[:id]
+	        flash[:notice] = "Please log in"
+	        redirect_to :root
+	        return false
+	    else
+	        return true
+	    end
+	end
+
   
 end
-

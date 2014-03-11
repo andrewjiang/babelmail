@@ -1,6 +1,10 @@
 <script>
+    mixpanel.track("Signup page loaded");
+</script>
+<script>
 	$(document).ready(function(){
 	  $('.pricing-button').click(function(){
+      mixpanel.track(event.target.id + " clicked");
 	    $('#pricing-form').toggleClass("hidden");
 	    $('#new-account-form').toggleClass("hidden");
 	    $('#account-type-field').val(event.target.id);
@@ -103,7 +107,7 @@
 
 		  <div><%= f.text_field :account_type, :class => "form-control hidden", :id => "account-type-field" %></div>
 
-		  <div><%= f.submit "Let's get started!", :class=>"btn btn-info btn-block", :id=>"account-submit-button" %></div>
+		  <div><%= f.submit "Let's get started!", :class=>"btn btn-info btn-block", :id=>"account-submit-button", :onclick => 'mixpanel.track("Signup clicked");' %></div>
 
 		<% end %>
 

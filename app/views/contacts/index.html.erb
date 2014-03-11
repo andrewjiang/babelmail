@@ -14,54 +14,56 @@
   </div>
 
   <div class="row"><div class="col-md-12">
-    <table class="table table-responsive" data-step="2" data-intro="These are your <span class='flatgreen'>Babel Contacts</span>. Add as many as you'd like!">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Send emails to</th>
-          <th>Language</th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
+    <div class="table-responsive">
+      <table class="table" data-step="2" data-intro="These are your <span class='flatgreen'>Babel Contacts</span>. Add as many as you'd like!">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Send emails to</th>
+            <th>Language</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
 
-      <tbody>
-        <% @contacts.each do |contact| %>
+        <tbody>
+          <% @contacts.each do |contact| %>
+            <tr>
+              <td><%= contact.firstname %> <%= contact.lastname %></td>
+              <td><%= contact.email %></td>
+              <td><%= mail_to contact.babeladdress do %>
+                <% contact.babeladdress %>
+                <% end %>
+              </td>
+              <td><%= contact.language %></td>
+              <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+              <td><%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' }, :class => "flatred" %></td>
+            </tr>
+          <% end %>
+            <tr>
+              <td>Andrew Babel</td>
+              <td>andrew.h.jiang@gmail.com</td>
+              <td data-step="3" data-intro="To write an email to Andrew, send your email to his unique <span class='flatgreen'>Babel Address</span> created just for you">
+                <a href="mailto:andrew.<%= current_user.username.downcase %>@babel-mail.com">
+                andrew.<%= current_user.username.downcase %>@babel-mail.com
+                </a>
+              </td>
+              <td data-step="4" data-intro="Andrew will receive your email translated in <span class='flatorange'>Chinese</span>, and his replies will get back to you in <span class='flatorange'>English</span>">Chinese</td>
+              <td><%= content_tag(:span, 'Edit',  :class => "lightgray") %></td>
+              <td><%= content_tag(:span, 'Delete',  :class => "lightgray") %></td>
+            </tr>
           <tr>
-            <td><%= contact.firstname %> <%= contact.lastname %></td>
-            <td><%= contact.email %></td>
-            <td><%= mail_to contact.babeladdress do %>
-              <% contact.babeladdress %>
-              <% end %>
-            </td>
-            <td><%= contact.language %></td>
-            <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-            <td><%= link_to 'Delete', contact, method: :delete, data: { confirm: 'Are you sure?' }, :class => "flatred" %></td>
-          </tr>
-        <% end %>
-          <tr>
-            <td>Andrew Babel</td>
-            <td>andrew.h.jiang@gmail.com</td>
-            <td data-step="3" data-intro="To write an email to Andrew, send your email to his unique <span class='flatgreen'>Babel Address</span> created just for you">
-              <a href="mailto:andrew.<%= current_user.username.downcase %>@babel-mail.com">
-              andrew.<%= current_user.username.downcase %>@babel-mail.com
-              </a>
-            </td>
-            <td data-step="4" data-intro="Andrew will receive your email translated in <span class='flatorange'>Chinese</span>, and his replies will get back to you in <span class='flatorange'>English</span>">Chinese</td>
-            <td><%= content_tag(:span, 'Edit',  :class => "lightgray") %></td>
-            <td><%= content_tag(:span, 'Delete',  :class => "lightgray") %></td>
-          </tr>
-        <tr>
-            <td data-step="5" data-intro="It's that simple! <br><br>Get started by adding a new contact, and start connecting with the world"><%= link_to '+ New Contact', new_contact_path %></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-      </tbody>
-    </table>
+              <td data-step="5" data-intro="It's that simple! <br><br>Get started by adding a new contact, and start connecting with the world"><%= link_to '+ New Contact', new_contact_path %></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 <!-- Modal -->
